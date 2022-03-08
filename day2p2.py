@@ -3,6 +3,7 @@ import sys
 
 horVal = 0
 dephVal = 0
+aimVal = 0
 
 inputFile = sys.argv[1]
 
@@ -13,9 +14,13 @@ for lines in input:
 
     if command[0][0] == 'f':
         horVal += int(command[1])
+        dephVal += aimVal * int(command[1])
+
     if command[0][0] == 'd':
-        dephVal -= int(command[1])
+        aimVal += int(command[1])
+
     if command[0][0] == 'u':
-        dephVal += int(command[1])
+        aimVal -= int(command[1])
+
 
 print(horVal*dephVal)
