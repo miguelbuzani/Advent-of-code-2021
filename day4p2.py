@@ -13,6 +13,8 @@ currentNums = []
 finalNum = 0
 
 winnerNums = []
+numboards = 0
+print((len(lines) - 1))
 
 for i in nums:
     currentNums.append(i.strip())
@@ -21,19 +23,25 @@ for i in nums:
     unmarkedSum = 0
     flag = False
     boardY = []
+    numboards = 0
 
     for j in range(2, len(lines)):
         scoreX = 0
         scoreY = {}
+        #print(lines[j])
 
         if (lines[j] == "\n"):
+
             if (flag):
+
                 break
             scoreX = 0
             scoreY = {}
             unmarkedSum = 0
             #print(boardY)
             boardY = []
+            #print(lines[j])
+            numboards += 1
 
         else:
             rowNums = lines[j].split(' ')
@@ -70,6 +78,9 @@ for i in nums:
                     if totals[ii] == 5:
                         flag = True
                         finalNum = atoi(i)
+                        tempJ = j
+                        print("Board: %s" % (numboards / 6))
+                        print(i)
                 # print(totals)
 
                 boardY.append(totals)
@@ -78,10 +89,15 @@ for i in nums:
 
             if (scoreX == 5):
                 flag = True
-                # print(str(j%6)+" "+i)
+                #winnerNums.append(finalNum)
+                #print(i)
                 finalNum = atoi(i)
-    if (flag):
-        break
+                tempJ = j
+                print("Board: %s" % (numboards / 6))
+                print(i)
+
+    # if (flag):
+    #     break
 
 # unmarkedSum = 0
 # unmarkedNums = list(filter(lambda e: e not in currentNums, nums))
@@ -92,3 +108,4 @@ print("--- %s seconds ---" % (time.time() - start_time))
 print(finalNum * unmarkedSum)
 print(finalNum)
 print(unmarkedSum)
+print(winnerNums)
