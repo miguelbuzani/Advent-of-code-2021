@@ -25,7 +25,7 @@ numBoards = (len(lines) - 1) / 6
 for i in nums:
     currentNums.append(i.strip())
 
-    if (len(winnerBoards) == 3):
+    if (len(winnerBoards) == numBoards):
         break
 
     boardNum = 0
@@ -73,7 +73,9 @@ for i in nums:
                             # print(j)
                             asdf = ((temp2J) / 18)
                             # print((int)(asdf * numBoards))
-                            winnerBoards.append((int)(asdf * numBoards))
+                            if (((int)(asdf * numBoards)) not in winnerBoards):
+                                winnerBoards.append((int)(asdf * numBoards))
+
                             # print(i, j, (int)(asdf * numBoards), currentNums)
                             # print([(int)(asdf * numBoards), i, j + 1])
                             # print(asdf)
@@ -119,7 +121,11 @@ for i in nums:
                             asdf = ((temp2J) / 18)
                             winnerCols[j][ii] = 1
                             # winnerBoards.append([(int)(asdf * numBoards), i])
-                            winnerBoards.append((int)(asdf * numBoards))
+                            # winnerBoards.append((int)(asdf * numBoards))
+
+                            if (((int)(asdf * numBoards)) not in winnerBoards):
+                                winnerBoards.append((int)(asdf * numBoards))
+
                             # print(i, j, ii, (int)(asdf * numBoards),
                             #       currentNums)
                             # print("Board: %s" % (numboards / 6))
@@ -146,3 +152,5 @@ print(finalNum)
 print(unmarkedSum)
 print(winnerNums)
 print(winnerBoards[len(winnerBoards) - 1])
+print(winnerBoards)
+print(numBoards)
