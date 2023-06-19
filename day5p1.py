@@ -76,18 +76,18 @@ for line in lines:
                 for j in range(atoi(cordX1), atoi(cordX2) + 1):
                     floorMap[atoi(cordY1)][j] = floorMap[atoi(cordY1)][j] + 1
 
-        # slope = NULL
+            # slope = NULL
 
-        # if ((atoi(cordX2) - atoi(cordX1)) != 0):
-        #     slope = (atoi(cordY2) - atoi(cordY1)) / (atoi(cordX2) -
-        #                                              atoi(cordX1))
-        #     print(
-        #         (atoi(cordY2) - atoi(cordY1)) / (atoi(cordX2) - atoi(cordX1)))
-        # else:
-        #     slope = 0
-        #     print(0)
+            # if ((atoi(cordX2) - atoi(cordX1)) != 0):
+            #     slope = (atoi(cordY2) - atoi(cordY1)) / (atoi(cordX2) -
+            #                                              atoi(cordX1))
+            #     print((atoi(cordY2) - atoi(cordY1)) /
+            #           (atoi(cordX2) - atoi(cordX1)))
+            # else:
+            #     slope = 0
+            #     print(0)
 
-        # print(slope**0)
+            # print(slope**0)
 
         i += 1
 
